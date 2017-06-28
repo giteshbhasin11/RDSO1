@@ -86,6 +86,14 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Edit Information"
+                android:textColor="#910303"
+                android:clickable="true"
+                android:id="@+id/edit"/>
+
+            <TextView
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

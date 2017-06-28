@@ -111,7 +111,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="enter your name " />
+            android:hint="Enter your name " />
 
     </TableRow>
 
