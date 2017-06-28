@@ -54,13 +54,6 @@
                     android:layout_height="wrap_content"
                     android:src="@drawable/rdso"/>
 
-                <EditText
-                    android:id="@+id/editText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:inputType="textEmailAddress" />
 
             </LinearLayout>
 
@@ -164,6 +157,7 @@
                     android:layout_marginRight="5dp"
                     android:clickable="true"
                     android:textColor="#4b61cc"
+                    android:id="@+id/signup"
                     />
                 <TextView
                     android:layout_width="wrap_content"

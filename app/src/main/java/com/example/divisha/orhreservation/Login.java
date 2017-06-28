@@ -13,6 +13,14 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
+        TextView su=(TextView)findViewById(R.id.signup);
+        su.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),signup.class);
+                startActivity(i);
+            }
+        });
 
         TextView fp = (TextView) findViewById(R.id.fp);
         fp.setOnClickListener(new View.OnClickListener() {
