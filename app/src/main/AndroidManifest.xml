@@ -18,7 +18,8 @@
         <activity android:name=".second" />
         <activity android:name=".forgtpswrd" />
         <activity android:name=".editinfo" />
-        <activity android:name=".signup"></activity>
+        <activity android:name=".signup" />
+        <activity android:name=".aftrlogin"></activity>
     </application>
 
 </manifest>
