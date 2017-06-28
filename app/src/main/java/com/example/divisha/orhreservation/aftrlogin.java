@@ -21,5 +21,14 @@ public class aftrlogin extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        TextView addr = (TextView)findViewById(R.id.addr);
+        addr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(),Rform.class);
+                startActivity(i);
+            }
+        });
     }
 }

@@ -19,7 +19,8 @@
         <activity android:name=".forgtpswrd" />
         <activity android:name=".editinfo" />
         <activity android:name=".signup" />
-        <activity android:name=".aftrlogin"></activity>
+        <activity android:name=".aftrlogin" />
+        <activity android:name=".Rform"></activity>
     </application>
 
 </manifest>
