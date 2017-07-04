@@ -59,9 +59,9 @@ public class Login extends AppCompatActivity {
         backgroundTask.execute(method,login_email,login_pass);
         //startActivity(new Intent(this,aftrlogin.class));
     }
-    public void userLogin1 (View view)
+   /* public void userLogin1 (View view)
     {
         startActivity(new Intent(this,aftrlogin.class));
 
-    }
+    }*/
 }
