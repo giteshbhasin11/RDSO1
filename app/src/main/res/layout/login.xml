@@ -110,7 +110,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:hint="E-mail"
-                    android:inputType="textEmailAddress"/>
+                    android:inputType="textEmailAddress"
+                    android:id="@+id/user_email"/>
 
             </LinearLayout>
             <LinearLayout
@@ -127,7 +128,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:hint="Password"
-                    android:inputType="textPassword"/>
+                    android:inputType="textPassword"
+                    android:id="@+id/user_pass"/>
 
             </LinearLayout>
 
@@ -140,6 +142,7 @@
                     android:layout_height="wrap_content"
                     android:text="Login"
                     android:id="@+id/login"
+                    android:onClick="userLogin"
                     />
                 <Button
                     android:layout_width="wrap_content"
@@ -159,6 +162,7 @@
                     android:clickable="true"
                     android:textColor="#4b61cc"
                     android:id="@+id/signup"
+                    android:onClick="userReg"
                     />
                 <TextView
                     android:layout_width="wrap_content"
