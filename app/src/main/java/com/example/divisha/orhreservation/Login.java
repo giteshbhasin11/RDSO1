@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -54,14 +53,28 @@ public class Login extends AppCompatActivity {
     {
         login_email = ET_Email.getText().toString();
         login_pass = ET_PASS.getText().toString();
+        int error = 1;
+        if(login_email.isEmpty()){
+            ET_Email.setError("This cannot be empty");
+            error =1;
+        }
+        else {
+            error = 0;
+
+        }
+        if(login_pass.isEmpty()){
+            ET_PASS.setError("This cannot be empty");
+            error =1;
+        }
+        else {
+            error = 0;
+
+        }
+
         String method = "login";
         BackgroundTask backgroundTask = new BackgroundTask(this);
         backgroundTask.execute(method,login_email,login_pass);
-        //startActivity(new Intent(this,aftrlogin.class));
+      // startActivity(new Intent(this,aftrlogin.class));
     }
-   /* public void userLogin1 (View view)
-    {
-        startActivity(new Intent(this,aftrlogin.class));
 
-    }*/
 }

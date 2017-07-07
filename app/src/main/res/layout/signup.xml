@@ -133,7 +133,7 @@
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="39dp"
                 android:padding="10dp"
                 />
 
@@ -157,7 +157,7 @@
             <Spinner
                 android:id="@+id/spinner2"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
+                android:layout_height="39dp"
                 android:padding="10dp" />
 
         </TableRow>

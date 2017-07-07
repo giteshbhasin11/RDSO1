@@ -16,7 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".second" />
         <activity android:name=".forgtpswrd" />
         <activity android:name=".editinfo" />
         <activity android:name=".signup" />
