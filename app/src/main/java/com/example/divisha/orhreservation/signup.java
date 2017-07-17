@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class signup extends AppCompatActivity {
 
@@ -44,6 +47,20 @@ public class signup extends AppCompatActivity {
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 // Apply the adapter to the spinner
         spinner2.setAdapter(adapter2);
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("khali kardo DB");
+        menu.add("Logout");
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        finish();
+        Toast.makeText(this, "Sab Khali Ho Gaya", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this,Login.class));
+        return super.onOptionsItemSelected(item);
     }
     public void userReg(View view){
 

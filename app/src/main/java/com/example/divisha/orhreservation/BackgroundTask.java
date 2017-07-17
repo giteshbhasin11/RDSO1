@@ -47,13 +47,14 @@ public class BackgroundTask extends AsyncTask<String,Void,String>{
     protected String doInBackground(String... params) {
         String reg_url = "http://10.0.2.2/webapp/register.php";
         String login_url = "http://10.0.2.2/webapp/login.php";
+        String update_url = "http://10.0.2.2/webapp/Update.php";
         String method = params[0];
         if (method.equals("register")) {
             String name = params[1];
             String user_dir = params[2];
             String user_dis = params[3];
             String user_email = params[4];
-            String user_pass = params[5];
+            String user_pass = params[5]; ;
             String user_number = params[6];
             try {
                 URL url = new URL(reg_url);
@@ -67,7 +68,7 @@ public class BackgroundTask extends AsyncTask<String,Void,String>{
                         URLEncoder.encode("user_dir", "UTF-8") + "=" + URLEncoder.encode(user_dir, "UTF-8") + "&" +
                         URLEncoder.encode("user_dis", "UTF-8") + "=" + URLEncoder.encode(user_dis, "UTF-8") + "&" +
                         URLEncoder.encode("new_email", "UTF-8") + "=" + URLEncoder.encode(user_email, "UTF-8") + "&" +
-                        URLEncoder.encode("user_pass", "UTF-8") + "=" + URLEncoder.encode(user_pass, "UTF-8") + "&" +
+                        URLEncoder.encode("new_pass", "UTF-8") + "=" + URLEncoder.encode(user_pass, "UTF-8") + "&" +
                         URLEncoder.encode("new_number", "UTF-8") + "=" + URLEncoder.encode(user_number, "UTF-8");
 
                 bufferedWriter.write(data);
@@ -121,6 +122,41 @@ public class BackgroundTask extends AsyncTask<String,Void,String>{
                 e.printStackTrace();
             }
         }
+       else if (method.equals("update")) {
+            String name = params[1];
+            String user_dir = params[2];
+            String user_dis = params[3];
+            String user_email = params[4];
+            String user_number = params[5];
+            try {
+                URL url = new URL(update_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                //httpURLConnection.setDoInput(true);
+                OutputStream OS = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(OS, "UTF-8"));
+                String data = URLEncoder.encode("user", "UTF-8") + "=" + URLEncoder.encode(name, "UTF-8") + "&" +
+                        URLEncoder.encode("user_dir", "UTF-8") + "=" + URLEncoder.encode(user_dir, "UTF-8") + "&" +
+                        URLEncoder.encode("user_dis", "UTF-8") + "=" + URLEncoder.encode(user_dis, "UTF-8") + "&" +
+                        URLEncoder.encode("new_email", "UTF-8") + "=" + URLEncoder.encode(user_email, "UTF-8") + "&" +
+                        URLEncoder.encode("new_number", "UTF-8") + "=" + URLEncoder.encode(user_number, "UTF-8");
+
+                bufferedWriter.write(data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                OS.close();
+                InputStream IS = httpURLConnection.getInputStream();
+                IS.close();
+                //httpURLConnection.connect();
+                httpURLConnection.disconnect();
+                return "Update Success...";
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         return null;
     }
     @Override
@@ -129,7 +165,16 @@ public class BackgroundTask extends AsyncTask<String,Void,String>{
     }
     @Override
     protected void onPostExecute(String result) {
-        if(result.equals("Registration Success..."))
+       if(result.equals("Registration Success..."))
+        {
+            Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+            alertDialog.setMessage(result);
+            alertDialog.show();
+        }
+        if(result.equals("Update Success..."))
         {
             Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
         }
