@@ -50,7 +50,6 @@ public class signup extends AppCompatActivity {
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        menu.add("khali kardo DB");
         menu.add("Logout");
         return super.onCreateOptionsMenu(menu);
     }
@@ -58,7 +57,7 @@ public class signup extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
-        Toast.makeText(this, "Sab Khali Ho Gaya", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "User Logout", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(this,Login.class));
         return super.onOptionsItemSelected(item);
     }
